@@ -3,4 +3,59 @@
   <groupId>com.baidu.qa</groupId>
   <artifactId>zyxTest</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+  	<dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.4.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.5</version>
+     </dependency>
+      <dependency>
+            <groupId>json</groupId>
+            <artifactId>json</artifactId>
+            <version>20170516</version>
+     </dependency>
+   </dependencies>
+   <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.zyx.httpUtil.httpJar</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>com.zyx.httpUtil.httpJar</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+
+			</plugin>
+        </plugins>
+   </build>
 </project>
